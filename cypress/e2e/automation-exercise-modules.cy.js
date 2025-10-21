@@ -8,8 +8,6 @@
 //  it -> Teste abcde
 
 import userData from "../fixtures/example.json";
-import { getRandomNumber, getRandomEmail } from "../support/helpers";
-import { faker } from "@faker-js/faker";
 import menu from "../modules/menu";
 import login from "../modules/login";
 import cadastro from "../modules/cadastro";
@@ -23,7 +21,7 @@ describe("Automation Exercise", () => {
     cy.navegarParaLogin();
   });
 
-  it.only("Cadastrar um Usuário", () => {
+  it("Cadastrar um Usuário", () => {
     login.preencherFormularioPreCadastro();
 
     cadastro.preencherCadastroFormularioCompleto();
