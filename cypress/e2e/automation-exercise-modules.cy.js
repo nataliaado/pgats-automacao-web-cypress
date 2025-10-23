@@ -1,13 +1,6 @@
 /// <reference types="cypress"/>
 
-// describe / context - suíte ou conjunto de testes em um mesmo arquivo
-// it - um teste dentro de um bloco ou conjunto de testes
-
-// describe -> Automations Exercise
-//  it -> Cadastrar um usuário
-//  it -> Teste abcde
-
-import userData from "../fixtures/example.json";
+import userData from "../fixtures/valid-user.json";
 import menu from "../modules/menu";
 import login from "../modules/login";
 import cadastro from "../modules/cadastro";

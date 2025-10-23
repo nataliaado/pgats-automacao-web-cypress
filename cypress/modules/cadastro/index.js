@@ -2,9 +2,6 @@ import { faker } from "@faker-js/faker";
 
 class Cadastro {
   preencherCadastroFormularioCompleto() {
-    const firstName = faker.person.firstName();
-    const lastName = faker.person.lastName();
-
     cy.get("input[type=radio]").check("Mrs");
 
     cy.get("input#password").type("12345", { log: false });
@@ -28,7 +25,6 @@ class Cadastro {
     cy.get('[data-qa="zipcode"]').type(faker.location.zipCode("#####"));
     cy.get('[data-qa="mobile_number"]').type(faker.phone.number("### ### ###"));
 
-    // Act
     cy.get('[data-qa="create-account"]').click();
   }
 }

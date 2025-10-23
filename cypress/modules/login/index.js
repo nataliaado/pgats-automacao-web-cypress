@@ -1,5 +1,4 @@
 import { faker } from "@faker-js/faker";
-
 import { getRandomNumber, getRandomEmail } from "../../support/helpers";
 
 class Login {
@@ -18,6 +17,13 @@ class Login {
     cy.get(`[data-qa="login-password"]`).type(pass);
 
     cy.get(`[data-qa="login-button"]`).click();
+  }
+
+  preencherFormularioPreCadastroUsuarioExistente(name, email) {
+    cy.get('[data-qa="signup-name"]').type(name);
+    cy.get('[data-qa="signup-email"]').type(email);
+
+    cy.contains("button", "Signup").click();
   }
 }
 

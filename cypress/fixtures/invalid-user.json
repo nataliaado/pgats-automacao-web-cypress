@@ -1,0 +1,10 @@
+{
+  "name": "QA Tester",
+  "email": "hello@cypress.io",
+  "subject": "Support",
+  "message": "Your email or password is incorrect!",
+  "body": "Fixtures are a great way to mock data for responses to routes",
+  "user": "qa-tester-1759530219181@test.com",
+  "password": "0123456"
+}
+

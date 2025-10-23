@@ -1,13 +1,6 @@
 /// <reference types="cypress"/>
 
-// describe / context - suíte ou conjunto de testes em um mesmo arquivo
-// it - um teste dentro de um bloco ou conjunto de testes
-
-// describe -> Automations Exercise
-//  it -> Cadastrar um usuário
-//  it -> Teste abcde
-
-import userData from "../fixtures/example.json";
+import validUserData from "../fixtures/valid-user.json";
 import { getRandomNumber, getRandomEmail } from "../support/helpers";
 import { faker } from "@faker-js/faker";
 
@@ -28,12 +21,11 @@ describe("Automation Exercise", () => {
 
     cy.log(`Dog Breed: ${faker.animal.dog()}`);
 
-    cy.log(`Nome do usuário: ${userData.name}`);
-    cy.log(`Email do usuário: ${userData.email}`);
+    cy.log(`Nome do usuário: ${validUserData.name}`);
+    cy.log(`Email do usuário: ${validUserData.email}`);
   });
 
   it("Cadastrar um Usuário", () => {
-    //Arrange
     const timestamp = new Date().getTime();
 
     //cy.get('[data-qa="signup-name"]').type("QA Tester");
@@ -100,11 +92,9 @@ describe("Automation Exercise", () => {
       faker.phone.number("### ### ###")
     );
 
-    // Act
     // cy.get('[data-qa="create-account"]').click();
     cy.xpath('//button[@data-qa="create-account"]').click();
 
-    // Assert
     cy.url().should("includes", "account_created");
     cy.contains("b", "Account Created!");
   });
@@ -183,19 +173,19 @@ describe("Automation Exercise", () => {
     //cy.get("a[href*=contact]").click();
     cy.xpath('//a[@href="/contact_us"]').click();
 
-    //cy.get('[data-qa="name"]').type(userData.name);
-    cy.xpath('//input[@data-qa="name"]').type(userData.name);
+    //cy.get('[data-qa="name"]').type(validUserData.name);
+    cy.xpath('//input[@data-qa="name"]').type(validUserData.name);
 
-    //cy.get('[data-qa="email"]').type(userData.email);
-    cy.xpath('//input[@data-qa="email"]').type(userData.email);
+    //cy.get('[data-qa="email"]').type(validUserData.email);
+    cy.xpath('//input[@data-qa="email"]').type(validUserData.email);
 
-    //cy.get('[data-qa="subject"]').type(userData.subject);
-    cy.xpath('//input[@data-qa="subject"]').type(userData.subject);
+    //cy.get('[data-qa="subject"]').type(validUserData.subject);
+    cy.xpath('//input[@data-qa="subject"]').type(validUserData.subject);
 
-    //cy.get('[data-qa="message"]').type(userData.message);
-    cy.xpath('//textarea[@data-qa="message"]').type(userData.message);
+    //cy.get('[data-qa="message"]').type(validUserData.message);
+    cy.xpath('//textarea[@data-qa="message"]').type(validUserData.message);
 
-    cy.fixture("example.json").as("arquivo");
+    cy.fixture("valid-user.json").as("arquivo");
     //cy.get("input[type=file]").selectFile("@arquivo");
     cy.xpath('//input[@type="file"]').selectFile("@arquivo");
 

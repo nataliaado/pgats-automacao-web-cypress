@@ -4,7 +4,6 @@ describe("Drag and Drop and Windows", () => {
 
     cy.contains("Click Here")
       .invoke("removeAttr", "target")
-
       .click();
 
     cy.get("h3").should("have.text", "New Window");

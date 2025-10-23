@@ -9,3 +9,5 @@ export function getRandomEmail() {
   //return `qa-tester${getRandomNumber()}@test.com`;
   return faker.internet.email({firstName: 'QATesterPgats'});
 }
+
+require('browserstack-cypress-cli/bin/testObservability/cypress');

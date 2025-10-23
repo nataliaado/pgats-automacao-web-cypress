@@ -20,3 +20,5 @@ import "./commands";
 // require('./commands')
 import "cypress-mochawesome-reporter/register";
 import "cypress-xpath";
+
+require('browserstack-cypress-cli/bin/testObservability/cypress');
