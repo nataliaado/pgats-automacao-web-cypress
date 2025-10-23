@@ -62,7 +62,7 @@ describe("Automation Exercise", () => {
     cy.get('[data-qa="subject"]').type(userData.subject);
     cy.get('[data-qa="message"]').type(userData.message);
 
-    cy.fixture("example.json").as("arquivo");
+    cy.fixture("valid-user.json").as("arquivo");
     cy.get("input[type=file]").selectFile("@arquivo");
     cy.get('[data-qa="submit-button"]').click();
 
