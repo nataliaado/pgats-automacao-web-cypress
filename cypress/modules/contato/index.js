@@ -13,6 +13,11 @@ class Contato {
     cy.get("input[type=file]").selectFile("@arquivo");
     cy.get('[data-qa="submit-button"]').click();
   }
+
+  fazerSubscricao(){
+      cy.get("#susbscribe_email").type(validUserData.email);
+      cy.get("#subscribe").click();
+  }
 }
 
 export default new Contato();

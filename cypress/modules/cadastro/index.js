@@ -27,6 +27,10 @@ class Cadastro {
 
     cy.get('[data-qa="create-account"]').click();
   }
+
+  confirmarContaCriada() {
+    cy.get('[data-qa="continue-button"]').click();
+  }
 }
 
 export default new Cadastro();
