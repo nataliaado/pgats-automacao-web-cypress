@@ -140,6 +140,16 @@ describe("Automation Exercise", () => {
 
     cadastro.confirmarContaCriada();
     carrinho.adicionarProdutoNoCarrinho();
+    carrinho.irParaCarrinho();
+    cy.url().should("includes", "view_cart");
 
+    carrinho.irParaCheckout();
+    carrinho.fazerPedido();
+    carrinho.preencherDadosParaPagamento();
+
+    cy.contains(
+      ".col-sm-9 > p",
+      "Congratulations! Your order has been confirmed!"
+    );
   });
 });
